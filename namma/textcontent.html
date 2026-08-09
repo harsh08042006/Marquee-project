@@ -33,16 +33,17 @@
         })
        detail.addEventListener("mouseenter",(event)=>{
          
-         if(trailinterval){
-            clearInterval(trailinterval);
-         }
+         // if(trailinterval){
+         //    clearInterval(trailinterval);
+         // }
         
         trailinterval= setInterval(()=>{
            let img1=document.createElement('img');
             img1.classList.add('img');
           img1.style.left=event.clientX+'px';
           img1.style.top=event.clientY+'px';
-         
+         //  img1.style.transform='scale(1)';
+         //  img1.style.transition='transform 10s ease-in-out '
         index = (index + 1) % images.length;
          img1.src = images[index];
          document.body.append(img1);

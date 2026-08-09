@@ -76,7 +76,8 @@
         setTimeout(()=>{
           ele.style.opacity="1";
           ele.style.transform="translateY(0)";
-        },index*200)
+          ele.style.transition="transform 1s ease";
+        },index*50)
      })
  }
 

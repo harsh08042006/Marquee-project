@@ -13,6 +13,7 @@
     </style>
 </head>
 <body>
+    <div class="cir"></div>
     <p class="play2"><div class="word"><div class="ani1">P</div><div class="ani1">L</div><div class="ani1">A</div><div class="ani1">Y</div><div class="ani1">G</div><div class="ani1">R</div><div class="ani1">O</div><div class="ani1">U</div><div class="ani1">D</div></div></p>
     <div class="container">
         <div class="p1"> <div class="image"> <img  class="img1" src="./play1.webp" alt="" ><video  class="vid1" src="./c.mp4" autoplay></video></div></div>
@@ -26,10 +27,18 @@
         let div2=document.querySelector('.img2');
         let vid2=document.querySelector('.vid2');
         let char=document.querySelectorAll('.ani1')
-        div1.addEventListener('mouseover',()=>{
+         let cir=document.querySelector(".cir");
+          document.addEventListener('mousemove',(event)=>{
+              cir.style.left=event.clientX+'px';
+              cir.style.top=event.clientY+'px';      
+        })
+         div1.addEventListener('mouseover',()=>{
             div1.style.filter='blur(2px)'
             vid1.style.display='block';
-           
+           cir.style.heigth='20px';
+           cir.style.width='100px';
+        
+        //    cir.innerHTML='<span>"MATETA"</span>'
 
         })
         div1.addEventListener('mouseout',()=>{

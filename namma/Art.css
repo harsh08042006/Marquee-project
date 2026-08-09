@@ -76,7 +76,7 @@ transform:translateY(140%);
     border: 1px solid;
     position: absolute;
     background-color: blue;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 .text{
     font-family: Mixtape Extra Condensed, Verdana, sans-serif;
@@ -193,5 +193,10 @@ transform:translateY(140%);
     
 }
 @keyframes popup{
-    
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(2);
+    }
 }
