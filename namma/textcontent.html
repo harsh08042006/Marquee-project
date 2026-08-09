@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Art.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+  
+
+    <div class="cir"></div>
+    <div class="text">
+       <span>IT'S NEVER "JUST A WEBSITE"</span>
+        
+       <span>EVERY <span id="detail">DEATAIL</span> MATTERS</span>
+    <span>WE CRAFT DIGITAL EXPERIENCE.</span>
+       <span>YOUR DESIGN.OUR OBSESSION.</span>
+    
+    <span>OUR <span id="playground"> PLAYGROUND</span>.</span>
+    <script>
+        let images=['p1.jpeg','p2.jpeg','p3.jpeg'];
+        let detail=document.querySelector("#detail");
+        let play=document.querySelector("#playground");
+        let cir=document.querySelector(".cir");
+        let img1=document.querySelector('.im');
+        let trailinterval=null;
+          let index=0;
+         document.addEventListener('mousemove',(event)=>{
+              cir.style.left=event.clientX+'px';
+              cir.style.top=event.clientY+'px';      
+        })
+       detail.addEventListener("mouseenter",(event)=>{
+         
+         if(trailinterval){
+            clearInterval(trailinterval);
+         }
+        
+        trailinterval= setInterval(()=>{
+           let img1=document.createElement('img');
+            img1.classList.add('img');
+          img1.style.left=event.clientX+'px';
+          img1.style.top=event.clientY+'px';
+         
+        index = (index + 1) % images.length;
+         img1.src = images[index];
+         document.body.append(img1);
+           setTimeout(()=>{
+            img1.remove();
+         },800)
+         },300)
+});
+
+   detail.addEventListener("mouseout", () => {
+       
+   clearInterval(trailinterval);
+   trailinterval=null;
+        });  
+  
+   
+
+
+    </script>
+    
+
+    </div>
+</body>
+</html>

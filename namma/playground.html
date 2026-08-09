@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Art.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <p class="play2"><div class="word"><div class="ani1">P</div><div class="ani1">L</div><div class="ani1">A</div><div class="ani1">Y</div><div class="ani1">G</div><div class="ani1">R</div><div class="ani1">O</div><div class="ani1">U</div><div class="ani1">D</div></div></p>
+    <div class="container">
+        <div class="p1"> <div class="image"> <img  class="img1" src="./play1.webp" alt="" ><video  class="vid1" src="./c.mp4" autoplay></video></div></div>
+         <div class="p2"> <div class="image"> <img  class="img2" src="./play2.webp" alt="" ><video  class="vid2" src="./v.mp4" autoplay></video></div></div>
+    </div>
+    <script>
+        
+
+        let div1=document.querySelector('.img1');
+        let vid1=document.querySelector('.vid1');
+        let div2=document.querySelector('.img2');
+        let vid2=document.querySelector('.vid2');
+        let char=document.querySelectorAll('.ani1')
+        div1.addEventListener('mouseover',()=>{
+            div1.style.filter='blur(2px)'
+            vid1.style.display='block';
+           
+
+        })
+        div1.addEventListener('mouseout',()=>{
+            vid1.style.display='none';
+            div1.style.filter='blur(0px)'
+        })
+        div2.addEventListener('mouseover',()=>{
+            div2.style.filter='blur(2px)'
+            vid2.style.display='block';
+           
+
+        })
+        div2.addEventListener('mouseout',()=>{
+            vid2.style.display='none';
+            div2.style.filter='blur(0px)'
+        })
+    window.onload=function(){
+        char.forEach((ele)=>{
+            ele.style.transform='translate(0%,9%)';
+        })}
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: skyblue;
+        }
+        .imgcontainer{
+            width: 500px;
+            height:500px;
+            border: 1px solid;
+
+        }
+        .cc{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="imgcontainer"><img src="" alt="1234" class="im"></div>
+    <div>
+    <button class="next">Next</button>
+    <button class="prev">Prev</button>
+    <script>
+        let next=document.querySelector(".next");
+        let prev=document.querySelector(".prev");
+        let imgc=document.querySelector(".im");
+        const images=["./place1.jpg","./place4.jpg","./place5.jpg","icons8.png"]
+        let count=0;
+        next.addEventListener('click',()=>{
+           if(count<images.length-1){
+           count++;}
+            let img=images[count];
+           
+           imgc.src=img;
+            // count=count%(images.length);
+           
+           
+           imgc.classList.add("cc");
+          
+        })
+        prev.addEventListener('click',()=>{
+           
+             if(count>0){
+           count--;}
+           
+           let img=images[count];
+           
+           imgc.src=img;
+           imgc.classList.add("cc");
+         
+        })
+    </script>
+</div>
+</body>
+</html>

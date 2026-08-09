@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f5f7;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Form */
+#gdetail {
+    width: 400px;
+    margin: 0 auto 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+#gdetail p {
+    margin: 15px 0 7px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Text inputs */
+#gdetail input[type="text"],
+#gdetail input[type="number"],
+#gdetail input[type="email"] {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+/* Input focus */
+#gdetail input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Checkbox */
+#cb {
+    width: 17px;
+    height: 17px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* Submit button */
+#gdetail button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 6px;
+    background: #3498db;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#gdetail button:hover {
+    background: #217dbb;
+}
+
+/* Guest list container */
+.container {
+    width: 90%;
+    max-width: 900px;
+    min-height: 200px;
+    margin: 0 auto;
+    padding: 25px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+/* Individual guest card */
+.container > div {
+    padding: 20px;
+    background: #f8f9fa;
+    border-left: 5px solid #3498db;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container > div p {
+    margin: 8px 0;
+    color: #444;
+    font-size: 14px;
+}
+
+/* First paragraph - guest name */
+.container > div p:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    #gdetail {
+        width: 100%;
+    }
+
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+}
+
+
+        .container{
+            height: 1000px;
+            width: 100%;
+            border: 1px solid;
+        }
+        .c1{
+            background-color: lightgreen;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <form id="gdetail" action="" method="post">
+     <p>Enter name:</p>
+     <input type="text" id="name" required>
+     <p>Enter Mobilenum:</p>
+     <input type="number" name="phoneno" id="num" required>
+     <p>Enter Email:</p>
+     <input type="email" name="email" id="em" required>
+     <p>is checked in?<input type="checkbox" name="checkbox" id="cb"></p>
+     <input type="number" placeholder="Enter room number" id="rn" hidden>
+     <br>
+     <button>Submit</button>
+
+    </form>
+    <div class="container"></div>
+
+
+
+
+    <script>
+   let guestlist=[];
+   let checkbox=document.querySelector("#cb");
+   let roomnum=document.querySelector("#rn");
+   let name=document.querySelector("#name")
+   let email1=document.querySelector("#em")
+   let mobile=document.querySelector("#num")
+   let form=document.querySelector("#gdetail")
+   let list=document.querySelector(".container")
+   checkbox.addEventListener('click',()=>{
+    if(checkbox.checked){
+        roomnum.removeAttribute("hidden");
+        roomnum.setAttribute("required","true");
+    }
+    else{
+        roomnum.setAttribute("hidden","true");
+        roomnum.removeAttribute("required");
+        
+    }
+   })
+   form.addEventListener("submit",(event)=>{
+     event.preventDefault();
+    let obj={name:name.value,mobileno:mobile.value,email:email1.value,roomnum:roomnum.value};
+    guestlist.push(obj);
+       list.innerHTML="";
+       guestlist.forEach((ele)=>{ 
+       let div=document.createElement('div');
+           div.innerHTML=`<p>Name: ${ele.name}</p>
+                                    <p>Email: ${ele.email}</p>
+                                    <p>Phone Number: ${ele.mobileno}</p>
+                                    
+                                    <p>Room Number: ${ele.roomnum}</p>`
+
+             list.appendChild(div);})
+
+      
+      form.reset(); 
+      roomnum.setAttribute("hidden", "true"); 
+      roomnum.removeAttribute("required");
+    })
+   
+   
+
+
+
+    </script>
+</body>
+</html>
+<!-- form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    let obj = {
+        name: name.value,
+        mobileno: mobile.value,
+        email: email1.value,
+        roomnum: roomnum.value
+    };
+
+    guestlist.push(obj);
+
+    // Show all objects
+    list.innerHTML = "";
+
+    guestlist.forEach((ele) => {
+
+        let div = document.createElement("div");
+
+        div.innerHTML = `
+            <p>Name: ${ele.name}</p>
+            <p>Email: ${ele.email}</p>
+            <p>Phone Number: ${ele.mobileno}</p>
+            <p>Room Number: ${ele.roomnum}</p>
+            <hr>
+        `;
+
+        list.appendChild(div);
+    });
+}); -->

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="todolist.css"  rel="stylesheet">
+</head>
+<body>
+    <form class="main">Enter the task:<input type="text" name="todo" id="listinput" placeholder="Enter the task" required> <button id="add">Add</button></form>
+      <div class="container"></div>
+          
+        
+<script>
+let container =document.querySelector(".container");
+let main=document.querySelector(".main");
+let input=document.querySelector("#listinput");
+main.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    let new1=document.createElement("div");
+    let checkbox=document.createElement("input");
+    let content=document.createElement('p');
+    checkbox.setAttribute("type","checkbox");
+    content.textContent=`${input.value}`;
+    let tdot=document.createElement('button');
+    tdot.textContent="threedot";
+    new1.append(checkbox);
+    new1.append(content);
+    new1.classList.add("con");
+    
+    new1.append(tdot);
+    container.prepend(new1);
+    input.value="";
+    tdot.addEventListener('click',()=>{
+        let div2=document.createElement("div");
+        let delete1=document.createElement("button");
+        let edit1=document.createElement("button");
+        delete1.textContent="delete"
+        edit1.textContent="edit";
+        div2.classList.add("divn");
+        delete1.classList.add("delete");
+        edit1.classList.add("edit");
+        div2.append(delete1);
+        div2.append(edit1);
+        
+        new1.append(div2);
+     delete1.addEventListener('click',()=>{
+        new1.remove();
+     })
+     edit1.addEventListener('click',()=>{
+        input.focus();
+        let currvalue=input.value;
+        edit1.addEventListener('click',()=>{
+                content.textContent=currvalue
+        
+        })
+     })
+
+    })
+    
+
+})
+
+</script>
+    
+</body>
+</html>

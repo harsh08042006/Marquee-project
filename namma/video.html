@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./Art.css" type="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="cir"></div>
+    <div class="vid">
+        <iframe class="vid1" src="https://player.vimeo.com/video/1127104834?background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Showreel_Namma_EN" data-ready="true">
+  </iframe>
+    </div>
+    <script>
+        let div=document.querySelector('.vid1');
+        let cir=document.querySelector('.cir');
+        document.addEventListener('mousemove',(event)=>{
+              cir.style.left=event.clientX+'px';
+              cir.style.top=event.clientY+'px';      
+        })
+    </script>
+</body>
+</html>

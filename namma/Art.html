@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./Art.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+        <nav></nav>
+        
+   <div class="ani"> <p id="Head">WE THINK CRAFT AND DESIGN</p></div>
+  <div class="mov">
+    <video autoplay="" loop="" style="background-image:url(&quot;https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985%2F68dfa5030619737bde7460e5_Home-Hero-DK%20ModeV4-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+  	<source src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985%2F68dfa5030619737bde7460e5_Home-Hero-DK%20ModeV4-transcode.mp4" data-wf-ignore="true">
+  </video>
+  </div>
+    
+<script>
+ let movd=document.querySelector(".mov");
+ let content=document.querySelector("#Head")
+ let tempDeg=1;
+ let tempClientX=0
+ let text="WE THINK CRAFT AND DESIGN";
+ document.addEventListener('mousemove',(event)=>{
+    
+    movd.style.left=event.clientX+'px';
+     movd.style.top=event.clientY+'px';
+     if(tempClientX>event.clientX){
+      console.log("left ja rha hai");
+      tempDeg-=1;
+      movd.style.transform=`rotate3d(0,1,0,${tempDeg}deg)`;
+     }
+     else if(tempClientX<event.clientX){
+      tempDeg+=1;
+      movd.style.transform=`rotate3d(0,1,0,${tempDeg*0.5}deg)`;
+      console.log("right ja raha hai")
+     }
+       
+
+
+
+
+
+
+
+
+     tempClientX=event.clientX;
+
+    
+ })
+ window.onload=function(){
+    let text=content.textContent;
+    content.innerHTML="";
+   let arr= text.split('');
+   arr.forEach((ele,index)=>{
+         let para=document.createElement('span');
+         para.classList.add('line');
+         if(ele!='&nbsp'){
+         para.innerHTML = ele;
+        
+        //  para.style.animation=`Incr 0.3s ease-in-out ${index*90}ms forwards`;
+        //  para.style.opacity='1';
+         
+        
+         }
+         else{
+          para.innerHTML='&nbsp';
+          
+         }
+          content.append(para);
+         
+
+   })
+     let c2=document.querySelectorAll('#Head span');
+     c2.forEach((ele,index)=>{
+        setTimeout(()=>{
+          ele.style.opacity="1";
+          ele.style.transform="translateY(0)";
+        },index*200)
+     })
+ }
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   body{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+   }
+   .container{
+    display: flex;
+    height: 900px;
+    width: 380px;
+    border: 0.5px solid;
+    /* border-radius: 50px; */
+    flex-direction: column;
+    gap:5px;
+
+   }
+   .funct{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    
+   }
+   .like{
+    height: 40px;
+    width: 40px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: white;
+
+   }
+   .comment{
+     height: 40px;
+    width: 40px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: white;
+   }
+   .count{
+height: 40px;
+    width: 40px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: white;
+   }
+   .div{
+    display: flex;
+    gap: 5px;
+   }
+   input{
+    visibility:hidden;
+    width: 200px;
+    margin-left: 10px;
+   }
+   #post{
+    visibility: hidden;
+    height: 50px;
+    width: 90px;
+   }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <img src="/post.jpeg" alt="">
+        <div class="funct">
+            <div class="div">
+            <button class="like"></button>
+            <div class="count"></div>
+            
+            <button class="comment"></button></div>
+            
+        </div>
+        <input  id="text" type="text" placeholder="Enter comment Here">
+        <button id="post">postcomment</button>
+        <ul class="list"></ul>
+
+    </div>
+    <script>
+  let like=document.querySelector(".container .funct .like");
+  let comment=document.querySelector(".container .funct .comment")
+  let input1=document.querySelector(".container input");
+   let butn=document.querySelector(".container #post");
+  like.innerText="♡"
+  comment.innerText="💬"
+  let count=50;
+  let count1=document.querySelector(".container .funct .count");
+count1.innerText=count;
+  like.addEventListener('click',()=>{
+    if(like.innerText!="🩷"){
+         count++;
+    }
+    like.innerText="🩷";
+    
+    count1.innerText=count;
+    
+  })
+   comment.addEventListener('click',()=>{
+    input1.style.visibility="visible";
+    butn.style.visibility="visible";
+
+  })
+  butn.addEventListener('click',()=>{
+     let lbutn=document.querySelector(".container .list");
+     let row=document.createElement('tr');
+     row.textContent=input1.value;
+     lbutn.append(row);
+  })
+  
+    </script>
+</body>
+</html>
