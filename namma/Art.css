@@ -77,6 +77,7 @@ transform:translateY(140%);
     position: absolute;
     background-color: blue;
     /* pointer-events: none; */
+    z-index: 10;
 }
 .text{
     font-family: Mixtape Extra Condensed, Verdana, sans-serif;

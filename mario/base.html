@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ground{
+            width: 90vw;
+            height: 50px;
+            background-color: green;
+            position: relative;
+            top: 250px;
+            border: 2px solid;
+        }
+        .mario{
+            width: 5%;
+            height: 50px;
+            background-color: brown;
+            position: relative;
+            top: 150px; ;
+        }
+    </style>
+</head>
+<body>
+    <div class="ground"></div>
+    <div class="mario"></div>
+    <div class="obs"></div>
+    <script>
+        let mario=document.querySelector(".mario");
+        let isJumping=false;
+        let currentTop=150;
+        let maxtop=30;
+        let ground=150;
+        let velocity=-15;
+        let gravity=5;
+        let direction='up';
+        let currentleft=0;
+        let movingspeed=15;
+        //location of mario and obstacle
+        // let mariorect=mario.getBoundingClientRect();
+        // let obs=obs.getBoundingClientRect();
+
+    function jump(){
+       if(isJumping){
+        if(direction=='up' && currentTop>=maxtop){
+        currentTop+=velocity;
+        mario.style.top=currentTop+'px';
+
+    }
+    else if(direction=='up' && currentTop<=maxtop){
+        direction='down';
+    }
+    else if(direction=='down' && currentTop<ground){
+        currentTop+=gravity;
+        mario.style.top=currentTop+'px';
+    }
+    else if(direction=='down' && currentTop>=maxtop){
+        direction='up';
+        
+        return;
+    }
+}
+    requestAnimationFrame(jump);
+}
+ function right(){
+      
+     currentleft+=movingspeed;
+      mario.style.left=currentleft+'px';
+ }
+  function left(){
+      if(currentleft>0){
+      currentleft-=movingspeed;
+      mario.style.left=currentleft+'px';}
+ }
+ function iscolliding(){
+
+ }
+window.addEventListener('keydown',(event)=>{
+    if(event.key=='ArrowUp'){
+        direction='up';
+        isJumping=true;
+        jump();
+    }
+    if(event.key=='ArrowRight'){
+        right();
+    }
+    if(event.key=='ArrowLeft'){
+        left();
+    }
+})
+
+    </script>
+</body>
+</html>
