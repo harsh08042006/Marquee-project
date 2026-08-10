@@ -18,7 +18,15 @@
             height: 50px;
             background-color: brown;
             position: relative;
-            top: 150px; ;
+            top: 150px; 
+        }
+        .obs{
+           width: 5%;
+            height: 50px;
+            background-color:greenyellow;
+            position: relative;
+            top: 98px; 
+            left: 250px;
         }
     </style>
 </head>
@@ -36,10 +44,9 @@
         let gravity=5;
         let direction='up';
         let currentleft=0;
-        let movingspeed=15;
-        //location of mario and obstacle
-        // let mariorect=mario.getBoundingClientRect();
-        // let obs=obs.getBoundingClientRect();
+        let movingspeed=25;
+        
+       
 
     function jump(){
        if(isJumping){
@@ -74,7 +81,13 @@
       mario.style.left=currentleft+'px';}
  }
  function iscolliding(){
-
+      let mariorect=mario.getBoundingClientRect();
+        let obsrect=obs.getBoundingClientRect();
+        if(mariorect.x>=obsrect.x-mariorect.width && mariorect.x<=obsrect.x+mariorect.width){
+            console.log("colide");
+        }
+        requestAnimationFrame(iscolliding);
+        
  }
 window.addEventListener('keydown',(event)=>{
     if(event.key=='ArrowUp'){
@@ -89,6 +102,7 @@ window.addEventListener('keydown',(event)=>{
         left();
     }
 })
+iscolliding();
 
     </script>
 </body>
