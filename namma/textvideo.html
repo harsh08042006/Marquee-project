@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        @font-face {
+    font-family: "Mixtape Extra Condensed";
+    src: url("./fonts/MixtapeExtraCondensed.woff2") format("woff2");
+}
+
+
+        .dir{
+           font-family: "Mixtape Extra Condensed,Verdana,sans-serif";
+            font-weight: 800;
+            font-size: 96px;
+            color: rgb(228, 228,228);
+            opacity: 0.5;
+            letter-spacing: -6px;
+        }
+        .complete{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .v1{
+            overflow: hidden;
+            height: 200px;
+            width: 400px;
+            position: absolute;
+            left: 10px;
+            top: 40px;
+            display: none;
+        }
+         .v2{
+            overflow: hidden;
+            height: 200px;
+            width: 400px;
+            position: absolute;
+            left: 10px;
+            top: 90px;
+            display: none;
+        }
+         .v3{
+            overflow: hidden;
+            height: 200px;
+            width: 400px;
+            position: absolute;
+            left: 10px;
+            top: 150px;
+            display: none;
+        }
+         .v4{
+            overflow: hidden;
+            height: 200px;
+            width: 400px;
+            position: absolute;
+            left: 10px;
+            top: 230px;
+            display: none;
+        }
+         .v5{
+            overflow: hidden;
+            height: 200px;
+            width: 400px;
+            position: absolute;
+            left: 10px;
+            top: 360px;
+            display: none;
+        }
+         .v6{
+            overflow: hidden;
+            height: 200px;
+            width: 400px;
+            position: absolute;
+            left: 10px;
+            top: 470px;
+            display: none;
+        }
+         .v7{
+            overflow: hidden;
+            height: 200px;
+            width: 400px;
+            position: absolute;
+            left: 10px;
+            top: 570px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="complete">
+    <span id="ad" class="dir">ART DIRECTION</span>
+    <div class="v1"><video><source src="./c.mp4" type="video/mp4"></video></div>
+    <span id="ad1" class="dir">BRANDING</span>
+     <div class="v2"><video><source src="./c.mp4" type="video/mp4"></video></div>
+    <span id="ad2" class="dir">WEBFLOW</span>
+     <div class="v3"><video><source src="./c.mp4" type="video/mp4"></video></div>
+    <span id="ad3" class="dir">UI/UX DESIGN</span>
+     <div class="v4"><video><source src="./c.mp4" type="video/mp4"></video></div>
+    <span id="ad4" class="dir">GSAP ANIMATION</span>
+     <div class="v5"><video><source src="./c.mp4" type="video/mp4"></video></div>
+    <span id="ad5" class="dir">ADVERTISING</span>
+     <div class="v6"><video><source src="./c.mp4" type="video/mp4"></video></div>
+    <span id="ad6" class="dir">SEO & CONTENT</span>
+     <div class="v7"><video><source src="./c.mp4" type="video/mp4"></video></div>
+</div>
+<script>
+   let ad=document.querySelector("#ad");
+   let ad1=document.querySelector("#ad1");
+   let ad2=document.querySelector("#ad2");
+   let ad3=document.querySelector("#ad3");
+   let ad4=document.querySelector("#ad4");
+   let ad5=document.querySelector("#ad5");
+   
+   let ad6=document.querySelector("#ad6");
+   
+   let vid1=document.querySelector(".v1");
+   let vid2=document.querySelector(".v2");
+   let vid3=document.querySelector(".v3");
+   let vid4=document.querySelector(".v4");
+   let vid5=document.querySelector(".v5");
+   let vid6=document.querySelector(".v6");
+   ad.addEventListener('mouseover',()=>{
+      ad.style.opacity='1';   
+      vid1.style.display='block'; 
+      
+   })
+   ad.addEventListener('mouseout',()=>{
+    ad.style.opacity='0.5';
+     vid1.style.display='none'; 
+   })
+      ad1.addEventListener('mouseover',()=>{
+      ad1.style.opacity='1';   
+      vid2.style.display='block'; 
+      
+   })
+   ad1.addEventListener('mouseout',()=>{
+    ad1.style.opacity='0.5';
+     vid2.style.display='none'; 
+   })  
+   ad2.addEventListener('mouseover',()=>{
+      ad2.style.opacity='1';   
+      vid3.style.display='block'; 
+      
+   })
+   ad2.addEventListener('mouseout',()=>{
+    ad2.style.opacity='0.5';
+     vid3.style.display='none'; 
+   })
+      ad3.addEventListener('mouseover',()=>{
+      ad3.style.opacity='1';   
+      vid4.style.display='block'; 
+      
+   })
+   ad3.addEventListener('mouseout',()=>{
+    ad3.style.opacity='0.5';
+     vid4.style.display='none'; 
+   })
+     ad4.addEventListener('mouseover',()=>{
+      ad4.style.opacity='1';   
+      vid5.style.display='block'; 
+      
+   })
+   ad4.addEventListener('mouseout',()=>{
+    ad4.style.opacity='0.5';
+     vid5.style.display='none'; 
+   })
+   ad5.addEventListener('mouseover',()=>{
+      ad5.style.opacity='1';   
+      vid6.style.display='block'; 
+      
+   })
+   ad5.addEventListener('mouseout',()=>{
+    ad5.style.opacity='0.5';
+     vid6.style.display='none'; 
+   })
+      ad6.addEventListener('mouseover',()=>{
+      ad6.style.opacity='1';   
+      vid7.style.display='block'; 
+      
+   })
+   ad6.addEventListener('mouseout',()=>{
+    ad6.style.opacity='0.5';
+     vid7.style.display='none'; 
+   })
+
+</script>
+</body>
+</html>

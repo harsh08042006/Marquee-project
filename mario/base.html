@@ -28,14 +28,33 @@
             top: 98px; 
             left: 250px;
         }
+        .popup{
+            height: 150px;
+            width: 300px;
+            position: absolute;
+            z-index: 100;
+            top: 30%;
+            left: 40%;
+            border: 1px solid ;
+            border-radius: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+
+        }
     </style>
 </head>
 <body>
     <div class="ground"></div>
     <div class="mario"></div>
     <div class="obs"></div>
+    <div class="popup">Game Over
+
+    </div>
     <script>
         let mario=document.querySelector(".mario");
+        let obs=document.querySelector(".obs")
         let isJumping=false;
         let currentTop=150;
         let maxtop=30;
@@ -45,7 +64,8 @@
         let direction='up';
         let currentleft=0;
         let movingspeed=25;
-        
+        let gameover=false;
+        let obstacle=[];
        
 
     function jump(){
@@ -83,9 +103,19 @@
  function iscolliding(){
       let mariorect=mario.getBoundingClientRect();
         let obsrect=obs.getBoundingClientRect();
-        if(mariorect.x>=obsrect.x-mariorect.width && mariorect.x<=obsrect.x+mariorect.width){
-            console.log("colide");
+        if(mariorect.x >= (obsrect.x - mariorect.width) && mariorect.x <= obsrect.x+mariorect.width){
+            gameover=true;
+            
         }
+        else if((mariorect.bottom>=obsrect.top)&&(currentleft>=obsrect.x&&currentleft<=(obsrect.x+obsrect.width))){
+            gameover=true;
+            
+        }
+       if(gameover){
+        alert("game over");
+        gameover=false;
+        return;
+       }
         requestAnimationFrame(iscolliding);
         
  }
@@ -102,7 +132,9 @@ window.addEventListener('keydown',(event)=>{
         left();
     }
 })
+
 iscolliding();
+
 
     </script>
 </body>

@@ -99,13 +99,24 @@ transform:translateY(140%);
 #playground{
     text-decoration: solid underline white;
 }
-.img{
-    width: 200px;
-    height: 200px;
-    position: absolute;
+.img {
+    position: fixed;
+    width: 180px;
+    height: 230px;
+    object-fit: cover;
+
     pointer-events: none;
-   
+    z-index: 1;
+
+    transform: translate(-50%, -50%) scale(0) rotate(-10deg);
+    opacity: 0;
+
+    animation: imagePopup 0.8s ease-out forwards;
 }
+
+
+   
+
 .im.img{
     display: block;
 }
@@ -199,5 +210,26 @@ transform:translateY(140%);
     }
     100%{
         transform: scale(2);
+    }
+}
+@keyframes imagePopup {
+    0% {
+        transform: translate(-50%, -50%) scale(0) rotate(-15deg);
+        opacity: 0;
+    }
+
+    40% {
+        transform: translate(-50%, -50%) scale(1.15) rotate(5deg);
+        opacity: 1;
+    }
+
+    70% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0.8) rotate(8deg);
+        opacity: 0;
     }
 }
