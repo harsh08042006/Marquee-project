@@ -52,6 +52,8 @@ nav{
     flex-wrap: wrap;
     transform: translateY(140%);
     display:inline-block;
+    font-weight: 800;
+      font-size: 208px;
     
 }
 .line{
@@ -70,14 +72,17 @@ transform:translateY(140%);
 }
 
 .cir{
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     border: 1px solid;
     position: absolute;
     background-color: blue;
     /* pointer-events: none; */
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .text{
     font-family: Mixtape Extra Condensed, Verdana, sans-serif;

@@ -35,29 +35,47 @@
          div1.addEventListener('mouseover',()=>{
             div1.style.filter='blur(2px)'
             vid1.style.display='block';
-           cir.style.heigth='20px';
+           cir.style.height='40px';
            cir.style.width='100px';
         
-        //    cir.innerHTML='<span>"MATETA"</span>'
-
+           cir.innerText="MATETA";
+           cir.style.color="white";
+           
+           cir.style.borderRadius='20px'
         })
         div1.addEventListener('mouseout',()=>{
             vid1.style.display='none';
             div1.style.filter='blur(0px)'
+            cir.style.height='10px';
+           cir.style.width='10px';
+           cir.innerText=" ";
+           cir.style.borderRadius='50%'
+          
+            
         })
         div2.addEventListener('mouseover',()=>{
             div2.style.filter='blur(2px)'
             vid2.style.display='block';
-           
+           cir.style.height='40px';
+           cir.style.width='100px';
+          cir.style.borderRadius='20px'
+           cir.innerText="CHANCE";
+           cir.style.color="white";
 
         })
         div2.addEventListener('mouseout',()=>{
             vid2.style.display='none';
             div2.style.filter='blur(0px)'
+             cir.style.height='10px';
+           cir.style.width='10px';
+           cir.innerText=" ";
+        cir.style.borderRadius='50%'
         })
+
     window.onload=function(){
         char.forEach((ele)=>{
             ele.style.transform='translate(0%,9%)';
+            ele.style.transition='all 1s ease forward'
         })}
         
     </script>

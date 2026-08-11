@@ -5,8 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./Art.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+     nav{
+      display: flex;
+      gap: 400px;
+     }
+     .p1{
+      display: flex;
+      justify-content: space-between;
+      width: 35vw;
+      border: none;
+     
+     }
+     .p2{
+      display: flex;
+      justify-content: space-between;
+      width: 35vw;
+      border: none;
+     }
+     .ani{
+      font-family: 'Mixtape Extra Condensed';
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+@font-face {
+    font-family: "Mixtape Extra Condensed";
+    src: url("./fonts/MixtapeExtraCondensed.woff2") format("woff2");
+}
+      
+    </style>
     <title>Document</title>
-        <nav></nav>
+        <nav><div class="p1"><span id="sn">STUDIO NAMMA</span><span id="mode">DARK MODE</span></div><div class="p2"><span>MENU</span><span>LET'S TALK</span></div></nav>
         
    <div class="ani"> <p id="Head">WE THINK CRAFT AND DESIGN</p></div>
   <div class="mov">
@@ -57,7 +87,8 @@
          para.classList.add('line');
          if(ele!='&nbsp'){
          para.innerHTML = ele;
-        
+        para.style.fontSize='100px';
+        para.style.fontWeight='800';
         //  para.style.animation=`Incr 0.3s ease-in-out ${index*90}ms forwards`;
         //  para.style.opacity='1';
          
